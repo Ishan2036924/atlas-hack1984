@@ -2,15 +2,17 @@
 
 **Tagline:** Say one sentence to your phone. An agent does the work, never sees your private details, and nothing happens without your yes.
 
+**Try it:** sign up at https://app.atlasiw.com with your email (open to anyone on Nov 8). Payments run in Stripe test mode, so please don't enter a real card.
+
 ## Inspiration
 
 AI agents can act now, not only chat. But I would not let one loose on my own inbox, calendar and card. Three things stop me: I do not know what the AI actually saw, I do not know what it will do until it has done it, and I cannot check afterward. I built Atlas as my own workspace, and this weekend I made trust the point: what the AI sees, what it does, and what proof is left.
 
 ## What it does
 
-Atlas is a personal multi-agent AI workspace (tasks, calendar, mail, docs, sheets, boards, chat, agents). It existed before HACK1984. This weekend I built, on top of it:
+Atlas is a personal multi-agent AI workspace (tasks, calendar, mail, docs, sheets, boards, chat, agents). It existed before HACK1984. This weekend I added or extended, on top of it:
 
-- **Phone Agent mode.** Talk or type one message. The agent plans in a few rows. Before anything is sent, one card shows the real values (who, what, when). You tap yes or say "send it". Then Done, with Undo where the action allows it. If a long request hits a limit, you tap Keep going.
+- **Phone Agent mode** (extended this weekend; a first version existed at the start). Talk or type one message. The agent plans in a few rows. Before anything is sent, one card shows the real values (who, what, when). You tap yes or say "send it". Then Done, with Undo where the action allows it. If a long request hits a limit, you tap Keep going.
 - **Privacy masking with signed receipts.** Every request Atlas sends to an AI model is masked with my open-source Open Pseudonym: names, emails, phones and secrets become stand-ins. The request is checked before it leaves (if a real value is still in it, it does not go). Each request gets a signed, hash-chained receipt. Settings has "What the AI saw", so you read the masked text next to your own.
 - **Payments in Stripe test mode.** The owner can ask Atlas to pay a named payee an exact amount. It needs a tap on a card, has spend limits, and one approval can charge at most once. There is a Payments page with a timeline, refunds and limits. Test mode only: Stripe's test card, no real money.
 - **A natural voice from Gradium.** Atlas asks its questions aloud and reads answers in a Gradium voice, with OpenAI as the fallback. You pick Natural, Calm or Warm.
@@ -47,7 +49,7 @@ The weekend was 153 commits on top of a working app. The repo link holds the wee
 
 ## What's next
 
-- Open the beta on Tue 2026-11-10.
+- Bring more people in after judging.
 - Browser actions and real payments only after a proper security review (today: test mode, owner only).
 - Let others verify a receipt without trusting Atlas, using the open Open Action Consent and Open Pseudonym verifiers.
 - A local-model option for the most private tasks.
